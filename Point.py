@@ -10,6 +10,17 @@ class Point:
 
     def get_y(self):
         return self.__y
+
+    def is_valid(self, max_x, max_y):
+        if self.__x < 0:
+            return False
+        if self.__x >= max_x:
+            return False
+        if self.__y < 0:
+            return False
+        if self.__y >= max_y:
+            return False
+        return True
     
     @staticmethod
     def generate_random_point(max_x, max_y):

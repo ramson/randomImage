@@ -4,7 +4,7 @@ from LineCollection import LineCollection
 
 WIDTH = 1400
 HEIGHT = 800
-NUMBER_OF_POINTS = 100
+NUMBER_OF_POINTS = 1000
 
 png_creator = PNGCreator(WIDTH, HEIGHT)
 

@@ -28,7 +28,7 @@ class LineCollection:
             return
         
         # add point to existing line
-        self.__lines[random].add_next_point()
+        self.__lines[random].add_next_point(self.__max_x, self.__max_y)
         
     def generate_random_point(self):
         return Point.generate_random_point(self.__max_x, self.__max_y)

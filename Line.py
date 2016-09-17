@@ -9,5 +9,5 @@ class Line:
     def get_points(self):
         return self.__points
 
-    def add_next_point(self):
-        return SuccessorFinderWithPredecessor.findSuccessor(self.__points)
+    def add_next_point(self, max_x, max_y):
+        self.__points.append(SuccessorFinderWithPredecessor.find_successor(self.__points, max_x, max_y))
