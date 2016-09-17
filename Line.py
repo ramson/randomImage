@@ -1,12 +1,13 @@
-from Point import Point
+import Point
+from SuccessorFinderWithPredecessor import SuccessorFinderWithPredecessor
 
 class Line:
     def __init__(self, point):
-        self.points = []
-        self.points.append(point)
-
-    def add_random_point(self):
-        pass
+        self.__points = []
+        self.__points.append(point)
 
     def get_points(self):
-        return self.points
+        return self.__points
+
+    def add_next_point(self):
+        return SuccessorFinderWithPredecessor.findSuccessor(self.__points)
