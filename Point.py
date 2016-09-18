@@ -25,4 +25,6 @@ class Point:
     @staticmethod
     def generate_random_point(max_x, max_y):
         point = Point(randint(0, max_x), randint(0, max_y))
+        if not point.is_valid(max_x, max_y):
+            print "Point(" + str(point.get_x()) + "/" + str(point.get_y()) + ") is out of range."
         return point

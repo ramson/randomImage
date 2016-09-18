@@ -13,7 +13,7 @@ class LineCollection:
         return self.__lines
 
     def add_line(self, point):
-        line = Line(point)
+        line = Line(point, self.__max_x, self.__max_y)
         self.__lines.append(line)
 
     def add_point_to_any_line(self):
@@ -28,7 +28,7 @@ class LineCollection:
             return
         
         # add point to existing line
-        self.__lines[random].add_next_point(self.__max_x, self.__max_y)
+        self.__lines[random].add_next_point()
         
     def generate_random_point(self):
         return Point.generate_random_point(self.__max_x, self.__max_y)

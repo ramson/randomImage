@@ -16,7 +16,10 @@ class PNGCreator:
         f.close()
 
     def add_black_pixel(self, point):
-        self.__png[point.get_x()][point.get_y()] = 1
+        try:
+            self.__png[point.get_x()][point.get_y()] = 1
+        except IndexError:
+            print "Point(" + str(point.get_x()) + "/" + str(point.get_y()) + ") is out of range."
 
     def add_black_line(self, line):
         for point in line.get_points():
