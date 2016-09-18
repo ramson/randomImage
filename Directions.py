@@ -1,5 +1,25 @@
 from Point import Point
 
+def get_direction(point1, point2):
+    x_change = point2.get_x() - point1.get_x()
+    y_change = point2.get_y() - point1.get_y()
+    if x_change < 0 and y_change < 0:
+        return UpLeft
+    if x_change < 0 and y_change == 0:
+        return Up
+    if x_change < 0 and y_change > 0:
+        return UpRight
+    if x_change == 0 and y_change > 0:
+        return Right
+    if x_change > 0 and y_change > 0:
+        return DownRight
+    if x_change > 0 and y_change == 0:
+        return Down
+    if x_change > 0 and y_change < 0:
+        return DownLeft
+    return Left
+
+
 class Up:
     @staticmethod
     def move(point):
@@ -14,7 +34,8 @@ class Up:
     @staticmethod
     def previous_direction():
         return UpLeft
-    
+
+
 class Down:
     @staticmethod
     def move(point):
@@ -29,6 +50,7 @@ class Down:
     @staticmethod
     def previous_direction():
         return DownRight
+
 
 class Left:
     @staticmethod
@@ -45,6 +67,7 @@ class Left:
     def previous_direction():
         return DownLeft
 
+
 class Right:
     @staticmethod
     def move(point):
@@ -59,6 +82,7 @@ class Right:
     @staticmethod
     def previous_direction():
         return UpRight
+
 
 class UpRight:
     @staticmethod
@@ -75,6 +99,7 @@ class UpRight:
     def previous_direction():
         return Up
 
+
 class UpLeft:
     @staticmethod
     def move(point):
@@ -90,6 +115,7 @@ class UpLeft:
     def previous_direction():
         return Left
 
+
 class DownLeft:
     @staticmethod
     def move(point):
@@ -104,6 +130,7 @@ class DownLeft:
     @staticmethod
     def previous_direction():
         return Down
+
 
 class DownRight:
     @staticmethod
